@@ -1,0 +1,249 @@
+//task01
+//number 10
+a)int hungry;//valid
+b)int 2AB;//invalid.(Digit at the beginning)
+c)int 312.2;//invalid.(Digit at the beginning and decimal)
+d)int MOBILE;//Valid
+e)int "Ans";//invalid.(" symbol used to denote string)
+f)int $30;//Valid
+g)int Yes/No;//Invalid(/ symbol not allowed)
+h)int student-id;//Invalid(- symbol not allowed)
+i)int A+3;//invalid(+ symbol not allowed)
+j)int 'X';//invalid.(' symbol not allowed)
+k)int return;//invalid( return is a reserved keyword)
+
+
+
+//Task02
+//number 11
+//2.1
+public class task02_1{
+  public static void main(String[] args){
+    int num1=55;
+System.out.println(num1);
+  }
+}
+
+
+//2.2
+public class task02_2{
+  public static void main(String[] args){
+    int num1=55;//from2.1
+    int num2=25;
+    int sum=num1+num2;
+System.out.println("sum is :" +sum);
+  }
+}
+
+
+//2.3
+public class task02_3{
+  public static void main(String[] args){
+    int num1=55;//from2.1
+    int num2=25;//from2.2
+    int product=num1*num2;
+    int division=num1/num2;
+System.out.println("product is :" +product);
+System.out.println("result of division is :" +division);
+  }
+}
+  
+//2.4
+public class task02_4{
+  public static void main(String[] args){
+    double num1=55.5;
+    double num2=19.99;
+System.out.println("Number one is :" +num1);
+System.out.println("Number two is :" +num2);
+    double product=num1*num2;
+    double division=num1/num2;
+System.out.println("product is :" +product);
+System.out.println("result of division is :" +division);
+  }
+}
+
+
+//2.5
+public class task02_5{
+  public static void main(String[] args){
+    double num1=55.5;
+    int num2=20;
+System.out.println("Number one is :" +num1);
+System.out.println("Number two is :" +num2);
+    double product=num1*num2;
+    double division=num1/num2;
+System.out.println("product is :" +product);
+System.out.println("result of division is :" +division);
+  }
+}
+
+//2.6
+public class task02_6{
+  public static void main(String[] args){
+    String num1="55";//from2.1
+    String num2="25";//from2.2
+    int num3=77;
+    String sum1=num1+num2;  
+    String sum2=num2+num3;
+    
+System.out.println("First sum is :" +sum1);
+System.out.println("Second sum is :" +sum2);
+  }
+}
+
+
+//task 03
+//Number 12
+public class task03{
+  public static void main(String[] args){
+    int radius=4;
+    double circumference=2*Math.PI*radius;
+    double area=Math.PI*radius*radius;
+System.out.println("The circumference is :" +circumference);
+System.out.println("The area is :" +area);
+  }
+}
+
+
+//task04
+//Number 13
+public class task04{
+  public static void main(String[] args){
+    int num=1995;
+    int last_2_digit=1995%100;
+System.out.println("last two digits are :" +last_2_digit);
+  }
+}
+
+
+
+//task05
+//Number 14
+public class task05{
+  public static void main(String[] args){
+    int inch=1000;
+    double meters=.0254*1000;
+ System.out.println("in meters it will be :" +meters);
+  }
+}
+
+
+
+//task06
+//Number 15 (a)
+public class task06a{
+  public static void main(String[] args){
+    int a=5;
+    int b=8;
+System.out.println("Before swapping a was :" +a);
+System.out.println("Before swapping b was :" +b);
+    int temp=a;
+           a=b;
+        b=temp;
+System.out.println("After swapping a is :" +a);
+System.out.println("After swapping b is :" +b);
+  }
+}
+
+
+
+//Number15 (b)
+public class task06b{
+  public static void main(String[] args){
+    int a=5;
+    int b=8;
+System.out.println("Before swapping a was :" +a);
+System.out.println("Before swapping b was :" +b);
+          a=a+b;
+          b=a-b;
+          a=a-b;
+System.out.println("After swapping a is :" +a);
+System.out.println("After swapping b is :" +b);
+  }
+}
+
+
+
+//task07
+//Number16
+public class task07{
+  public static void main(String[] args){
+    int minutes_given =3456789;
+    int minutes_in_a_day=60*24;
+    int minutes_in_a_year=minutes_in_a_day*365;
+    int years=minutes_given/minutes_in_a_year;
+   int minutes_left=minutes_given%minutes_in_a_year;
+   int days=minutes_left/minutes_in_a_day;
+System.out.println("number of years :" +years);
+System.out.println("number of days :" +days);
+  }
+}
+    
+
+
+
+//task08
+//Number17
+public class task08{
+  public static void main(String[] args){
+    int a=2;
+    int b=5;
+    int c=8;
+    int d=(2*b*((c-a)/3)+7);
+  System.out.println("value of d is :" +d);
+  }
+ }
+
+
+
+
+
+//task09
+//number 18
+public class task09{
+  public static void main(String[] args){
+    int student_id=24201292;
+    int last_two_digit=student_id%100;
+    int last_two_digit_in_reverse=(last_two_digit%10)*10 +(last_two_digit/10);
+    System.out.println("last two digits in reverse :" + last_two_digit_in_reverse);
+  }
+}
+
+
+
+
+public class task10{
+  public static void main(String[] args){
+    int a=8;
+    int b=3;
+    int c=a/2;
+    double length_of_one_side=(Math.sqrt((Math.pow(c, 2))+(Math.pow(b, 2))));
+    double circumference=6*length_of_one_side;
+    double area=((3*(Math.sqrt(3)/2))*(length_of_one_side*length_of_one_side));
+    System.out.println("circumference is :" +circumference);
+    System.out.println("area is :" +area);
+  }
+}
+    
+
+
+
+
+//task11
+//number20
+public class task11{
+  public static void main(String[] args){
+    double a=4.5;
+    double b=9.5;
+    double c=(Math.sqrt(Math.pow(a, 2))+(Math.pow(b, 2)));
+    double sinA=a/c;
+    double cosA=b/c;
+    double sinB=b/c;
+    double cosB=a/c;
+System.out.println("sin(A) is :" +sinA);
+System.out.println("cos(A) is :" +cosA);
+System.out.println("sin(B) is :" +sinB);
+System.out.println("cos(B) is :" +cosB);
+  }
+}
+     
