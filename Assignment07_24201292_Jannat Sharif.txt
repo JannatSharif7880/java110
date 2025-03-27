@@ -1,0 +1,383 @@
+import java.util.Scanner;
+public class task01{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    int num=sc.nextInt();
+    evenchecker(num);
+    boolean result = isEven(num);
+System.out.println( result );
+boolean result1 = isPos(num);
+System.out.println( result1 );
+    sequence(num);
+  }
+  //01A
+  public static void evenchecker(int n){
+    if(n%2==0){
+      System.out.println("Even!!");
+    
+   }
+
+      else{
+        System.out.println("Odd!!");
+      }
+  }
+
+  //01B
+  public static boolean isEven(int num){
+return num%2==0;
+}
+  //01C
+  public static boolean isPos(int num){
+return num>0;
+  }
+  //01D
+  public static void sequence(int num){
+      if(isPos(num)){
+        for(int a=0;a<=num;a++){
+          if(isEven(a)){
+            System.out.print(a +" ");
+          }
+         }
+        }
+      else{
+        for(int a=num;a<0;a++){
+          if(!isEven(a)){
+            System.out.print(a +" ");
+          }
+         }
+        }
+     }
+}
+     
+    
+
+
+import java.util.Scanner;
+public class task02{
+  public static void main(String[] args){
+   Scanner sc=new Scanner(System.in);
+   int r=sc.nextInt();
+   double area = circleArea(r);
+   System.out.println(area);
+   double volume = sphereVolume(r);
+   System.out.println(volume);
+   findSpace(10,"circle");
+  }
+  //2A
+  public static double circleArea(double num){
+    double area=Math.PI*num*num;
+    return area;
+  }
+  //2B
+  public static double sphereVolume(double r){
+    double volume=(4.0/3.0)*Math.PI*Math.pow(r,3);
+    return volume;
+   }
+  //2C
+   public static void findSpace(int diameter,String shape){
+    double result;
+    double radius=diameter/2.0;
+
+    if(shape=="circle"){
+      double ans=circleArea(radius);
+      System.out.println("Area of circle :" +ans);
+    }
+
+      else if(shape=="volume"){
+      double ans=sphereVolume(radius);
+   System.out.println("Volume of sphere :" +ans);
+      }
+
+      else{
+       System.out.println("Wrong Parameter");
+      }
+
+    }
+}
+
+
+
+
+
+import java.util.Scanner;
+public class task03{
+  public static void main(String[] args){
+   Scanner sc=new Scanner(System.in);
+   int a=sc.nextInt();
+   int b=sc.nextInt();
+   int c=sc.nextInt();
+   boolean res = isTriangle(a,b,c);
+   System.out.println( res );
+   triArea(a,b,c);
+  }
+//3A
+  public static boolean isTriangle(int a,int b,int c){
+    return ((a+b>c)&&(b+c>a)&&(a+c>b));
+   
+     }
+//3B
+  public static void triArea(int a,int b,int c){
+    if(isTriangle(a,b,c)){
+      double s=(a+b+c)/2.0;
+  double area=Math.sqrt(s*(s-a)*(s-b)*(s-c));
+ System.out.println(area);
+    
+    }
+
+    else{
+      System.out.println("Can’t form triangle");
+    }
+
+  }
+}
+
+
+
+
+
+
+
+import java.util.Scanner;
+public class task04{
+  public static void main(String[] args){
+   Scanner sc=new Scanner(System.in);
+   int n=sc.nextInt();
+   boolean check = isPrime(n);
+System.out.println(check);
+boolean check1 = isPerfect(n);
+System.out.println(check1);
+special_sum(n);
+  }
+  //4A
+  public static boolean isPrime(int n){
+    if(n<=1){
+     return false;
+    
+     }
+    else if(n>1){
+      for( int i=2;i<n;i++){
+        if(n%i==0){
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+  //4B
+  public static boolean isPerfect(int n){
+    int sum=0;
+     for(int i=1;i<n;i++){
+        if(n%i==0){
+          sum+=i;
+        }
+     
+      }
+     if(sum!=n){
+       return false;
+     }
+    return true;
+  }
+  //4C
+  public static void special_sum(int num) {
+    int result = 0;
+    for (int j = 1;j<num;j++) {
+        if (isPrime(j)||isPerfect(j)) {
+            result+=j;
+        }
+    }
+    System.out.println(result); 
+  }
+}
+
+
+
+
+
+
+
+import java.util.Scanner;
+public class task05{
+  public static void main(String[] args){
+   Scanner sc=new Scanner(System.in);
+   int n=sc.nextInt();
+    showDots(n);
+    show_palindrome(n);
+    showDiamond(n);
+  }
+  //5A
+  public static void showDots(int n){
+    for(int i=0;i<n;i++){
+      System.out.print(".");
+    }
+  }
+  //5B
+  public static void show_palindrome(int n){
+    System.out.println();
+    for(int x=1;x<=n;x++){
+      System.out.print(x);
+    }
+   for(int x=n-1;x>0;x--){
+      System.out.print(x);
+    }
+   System.out.println();
+  }
+  //5c
+  public static void showDiamond(int n){
+    for(int j=1;j<=n;j++){
+    showDots(n-j);
+ show_palindrome(j);
+showDots(n-j);
+    
+   }
+    for(int j=n-1;j>=1;j--){
+  showDots(n-j);
+show_palindrome(j);
+showDots(n-j);
+    }
+  }
+}
+
+
+
+
+
+import java.util.Scanner;
+public class task06{
+  public static void main(String[] args){
+   Scanner sc=new Scanner(System.in);
+   int age=sc.nextInt();
+   double salary=sc.nextInt();
+   double t = calcTax(age,salary);
+   System.out.println(t);
+   calcYearlyTax();
+  }
+  //6A
+  public static double calcTax(int age,double salary){
+    if(age<18){
+      return 0.0;
+    }
+    else{
+      if(salary<10000){
+        return 0.0;
+    
+       }
+
+      else if(10000<=salary && salary<20000){
+        return salary*(7.0/100);
+      }
+
+      else{
+        return salary*(14.0/100);
+      
+        }
+    }
+  }
+  //6B
+  public static void calcYearlyTax(){
+    Scanner sc=new Scanner(System.in);
+    int age=sc.nextInt();
+    if(age>18){
+      for(int i=1;i<=12;i++){
+        double salary1=sc.nextInt();
+        calcTax(age,salary1);
+
+     System.out.println("Month "+i+"tax: "+(calcTax(age,salary1)));
+      
+      }
+    }
+  }
+}
+
+
+
+
+import java.util.Scanner;
+public class task07{
+  public static void main(String[] args){
+   Scanner sc=new Scanner(System.in);
+      int N1=sc.nextInt();
+    oneToN(1,N1);
+    System.out.println();
+    int N2=sc.nextInt();
+    nToOne(1,N2);
+    System.out.println();
+    int N3=sc.nextInt();
+    int sum=recursiveSum(1,N3);
+    System.out.println(sum);
+  }
+  //7A
+  public static void oneToN(int current, int N1){
+      if(current>N1){
+      return;
+    }
+     System.out.print(current +" ");
+      oneToN(current+1,N1);
+  }
+  //7B
+  public static void nToOne(int current, int N2){
+      if(N2==0){
+      return;
+    
+    }
+     System.out.print(N2 +" ");
+      nToOne(current,N2-1);
+     
+  }
+  //7C
+  public static int recursiveSum(int x,int N3){
+       if (x>N3){
+       return 0;
+    }
+    return x+recursiveSum(x+1,N3);
+   }
+}
+    
+
+
+
+
+import java.util.Scanner;
+public class task08{
+  public static void main(String[] args){
+   Scanner sc=new Scanner(System.in);
+      int N=sc.nextInt();
+      reversedigits(N);
+    }
+
+  public static void reversedigits(int N){
+      if(N==0){
+      return;
+    
+     }
+
+    System.out.print(N%10);
+    reversedigits(N/10);
+
+    }
+}
+
+
+
+
+
+import java.util.Scanner;
+public class task09{
+  public static void main(String[] args){
+   Scanner sc=new Scanner(System.in);
+      int N=sc.nextInt();
+      int x = sumDigits(N);
+System.out.println(x);
+  }
+  public static int sumDigits(int N){
+      if(N==0){
+      return 0;
+    
+    }
+ return (N%10)+(sumDigits(N/10));
+
+  }
+}
+    
+    
+
+    
